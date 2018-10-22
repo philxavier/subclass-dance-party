@@ -25,3 +25,14 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.tutu-dancer{
+  width: 10%;
+  height: auto;
+  position:absolute;
+}
+
+.hiphop-dancer{
+  width: 15%;
+  height: auto;
+  position:absolute;
+}
