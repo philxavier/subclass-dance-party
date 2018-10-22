@@ -3,8 +3,10 @@ var MakeTutuDancer = function(top, left, timeBetweenSteps) {
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
   this.$node = $('<img class="tutu-dancer" src="img/tutu-left.png"></img>');
+  this.isLinedUp = false;
   this.setPosition(top, left);
   this.animate();
+  
 };
 
 MakeTutuDancer.prototype = Object.create(MakeDancer.prototype);
@@ -27,20 +29,21 @@ MakeTutuDancer.prototype.animate = function() {
   var newPos = this._makeNewPosition();
   var oldPos = this.$node.offset();
   var speed = this._calcSpeed([oldPos.top, oldPos.left], newPos);
-  
-  this.$node.animate({ top: newPos[0], left: newPos[1] }, speed, this.animate.bind(this));
+  if (this.isLinedUp === false) {
+    this.$node.animate({ top: newPos[0], left: newPos[1] }, speed, this.animate.bind(this));
+  }
 };
 
 MakeTutuDancer.prototype._makeNewPosition = function() {
-      // Get viewport dimensions (remove the dimension of the div)
-      var h = $(window).height() - this.$node.height();
-      var w = $(window).width() - this.$node.width();
-      
-      var nh = Math.floor(Math.random() * h);
-      var nw = Math.floor(Math.random() * w);
-      
-      return [nh,nw];    
-}
+  // Get viewport dimensions (remove the dimension of the div)
+  var h = $(window).height() - this.$node.height();
+  var w = $(window).width() - this.$node.width();
+  
+  var nh = Math.floor(Math.random() * h);
+  var nw = Math.floor(Math.random() * w);
+  
+  return [nh,nw];    
+};
 
 MakeTutuDancer.prototype._calcSpeed = function(prev, next) {
   
@@ -55,5 +58,5 @@ MakeTutuDancer.prototype._calcSpeed = function(prev, next) {
 
   return speed;
 
-}
+};
 
