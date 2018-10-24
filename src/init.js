@@ -30,33 +30,54 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
 
-    window.dancers.push(dancer);  
+    window.dancers.push(dancer);
 
     if (hasDancer === false) {
       $('body').append('<embed src = \'audio/Digital_love.mp3\' autostart = \'true\' loop = \'true\' height = \'0\' width = \'0\'>');
       setInterval(function() { return changeLight(); }, 500);
     }
 
-    hasDancer = true;  
-     
+    hasDancer = true;
+
   });
 
   $('.lineUpButton').on('click', function(event) {
     var top = $( window ).height() / 2;
     var left = 20;
     for (let i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].lineUp(top, left);      
+      window.dancers[i].lineUp(top, left);
       left += window.dancers[i].$node.width();
     }
   });
-    
+
+  $('.interactButton').on('click', function(event) {
+    for (let i = 0; i < window.dancers.length; i=i+2) {
+      if (window.dancers[i+1]) {
+        window.dancers[i].$node.stop();
+        window.dancers[i+1].$node.stop();
+        window.dancers[i].isLinedUp = true;
+        window.dancers[i+1].isLinedUp = true;
+        window.dancers[i].meet(window.dancers[i+1]);
+        window.dancers[i+1].meet(window.dancers[i]);
+      }
+    }
+  });
+
+  $('.danceButton').on('click', function(event) {
+    for (let i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].isLinedUp = false;
+      window.dancers[i].animate();
+    }
+  });
+
   var changeLight = function() {
+    //change background lighting
     if ($('#light_div').hasClass('blink_screen')) {
       $( '#light_div' ).removeClass( 'blink_screen' ).addClass( 'blink_screen_green' );
     } else if ($('#light_div').hasClass('blink_screen_green')) {
       $('#light_div').removeClass( 'blink_screen_green' ).addClass( 'blink_screen_red' );
     } else if ($('#light_div').hasClass('blink_screen_red')) {
-      $('#light_div').removeClass( 'blink_screen_red' ).addClass( 'blink_screen_blue' );    
+      $('#light_div').removeClass( 'blink_screen_red' ).addClass( 'blink_screen_blue' );
     } else {
       $('#light_div').removeClass( 'blink_screen_blue' ).addClass( 'blink_screen' );
     }
