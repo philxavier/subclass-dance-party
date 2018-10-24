@@ -3,19 +3,24 @@
   <head>
     <title>Object Dance Party</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js" type="text/javascript"></script>
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
     <script src="src/tutuDancer.js"></script>
     <script src="src/hiphopDancer.js"></script>
+    <script src="src/breakDancer.js"></script>
+
   </head>
   <body>
     <div class="topbar">
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeTutuDancer">New Tutu Dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeHipHopDancer">New Hip Hop Dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBreakDancer">New Break Dancer</a>
       <a href="#" class="lineUpButton">Lineup Dancers</a>
     </div>
+    <div id = 'light_div' class = 'blink_screen'></div>
     <script src="src/init.js"></script>
   </body>
 </html>

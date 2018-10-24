@@ -18,10 +18,10 @@ MakeTutuDancer.prototype.step = function() {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  if (this.$node.attr("src") === 'img/tutu-left.png') {
-    this.$node.attr("src", "img/tutu-right.png");
-  } else if (this.$node.attr("src") === 'img/tutu-right.png') {
-    this.$node.attr("src", "img/tutu-left.png");
+  if (this.$node.attr('src') === 'img/tutu-left.png') {
+    this.$node.attr('src', 'img/tutu-right.png');
+  } else if (this.$node.attr('src') === 'img/tutu-right.png') {
+    this.$node.attr('src', 'img/tutu-left.png');
   }
 };
 
@@ -36,13 +36,13 @@ MakeTutuDancer.prototype.animate = function() {
 
 MakeTutuDancer.prototype._makeNewPosition = function() {
   // Get viewport dimensions (remove the dimension of the div)
-  var h = $(window).height() - this.$node.height();
+  //var h = $(window).height() - this.$node.height();
   var w = $(window).width() - this.$node.width();
   
-  var nh = Math.floor(Math.random() * h);
+  var nh = Math.floor(Math.random() * (600 - 300 + 1) + 300);
   var nw = Math.floor(Math.random() * w);
   
-  return [nh,nw];    
+  return [nh, nw];    
 };
 
 MakeTutuDancer.prototype._calcSpeed = function(prev, next) {
@@ -54,7 +54,7 @@ MakeTutuDancer.prototype._calcSpeed = function(prev, next) {
   
   var speedModifier = 0.1;
 
-  var speed = Math.ceil(greatest/speedModifier);
+  var speed = Math.ceil(greatest / speedModifier);
 
   return speed;
 

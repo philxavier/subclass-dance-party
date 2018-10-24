@@ -1,4 +1,5 @@
 window.dancers = [];
+var hasDancer = false;
 $(document).ready(function() {
 
   $('.addDancerButton').on('click', function(event) {
@@ -23,13 +24,21 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       1000
     );
     $('body').append(dancer.$node);
 
-    window.dancers.push(dancer);
+    window.dancers.push(dancer);  
+
+    if (hasDancer === false) {
+      $('body').append('<embed src = \'audio/Digital_love.mp3\' autostart = \'true\' loop = \'true\' height = \'0\' width = \'0\'>');
+      setInterval(function() { return changeLight(); }, 500);
+    }
+
+    hasDancer = true;  
+     
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -37,8 +46,21 @@ $(document).ready(function() {
     var left = 20;
     for (let i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp(top, left);      
-      left+=window.dancers[i].$node.width();
+      left += window.dancers[i].$node.width();
     }
   });
+    
+  var changeLight = function() {
+    if ($('#light_div').hasClass('blink_screen')) {
+      $( '#light_div' ).removeClass( 'blink_screen' ).addClass( 'blink_screen_green' );
+    } else if ($('#light_div').hasClass('blink_screen_green')) {
+      $('#light_div').removeClass( 'blink_screen_green' ).addClass( 'blink_screen_red' );
+    } else if ($('#light_div').hasClass('blink_screen_red')) {
+      $('#light_div').removeClass( 'blink_screen_red' ).addClass( 'blink_screen_blue' );    
+    } else {
+      $('#light_div').removeClass( 'blink_screen_blue' ).addClass( 'blink_screen' );
+    }
+  };
+
 });
 
