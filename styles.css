@@ -46,11 +46,12 @@ body, a:link, a:visited, a:active{
 
 
 
-body { 
+body {
+  /* Add background image */
   background-image: url("img/Capture.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover;
 }
 
 
