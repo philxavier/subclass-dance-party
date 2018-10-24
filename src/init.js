@@ -1,5 +1,6 @@
 window.dancers = [];
 var hasDancer = false;
+//init
 $(document).ready(function() {
 
   $('.addDancerButton').on('click', function(event) {
@@ -39,6 +40,10 @@ $(document).ready(function() {
 
     hasDancer = true;
 
+    $('img').on('click', function(event) {
+      $(this).height($(this).height() * 1.05);
+      $(this).width($(this).width() * 1.05);
+    });
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -70,6 +75,8 @@ $(document).ready(function() {
     }
   });
 
+
+
   var changeLight = function() {
     //change background lighting
     if ($('#light_div').hasClass('blink_screen')) {
@@ -82,6 +89,8 @@ $(document).ready(function() {
       $('#light_div').removeClass( 'blink_screen_blue' ).addClass( 'blink_screen' );
     }
   };
+
+
 
 });
 
