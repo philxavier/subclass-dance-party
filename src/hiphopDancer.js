@@ -1,3 +1,4 @@
+//Pseudoclassical Hip Hop Dancer
 var MakeHipHopDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -24,37 +25,4 @@ MakeHipHopDancer.prototype.step = function() {
   }
 
 };
-
-// MakeHipHopDancer.prototype.animate = function() {
-//   var newPos = this._makeNewPosition();
-//   var oldPos = this.$node.offset();
-//   var speed = this._calcSpeed([oldPos.top, oldPos.left], newPos);
-//   if (this.isLinedUp === false) {
-//     this.$node.animate({ top: newPos[0], left: newPos[1] }, speed, this.animate.bind(this));
-//   }
-// };
-
-// MakeHipHopDancer.prototype._makeNewPosition = function() {
-//   // Get viewport dimensions (remove the dimension of the div)
-//   //var h = $(window).height() - this.$node.height();
-//   var w = $(window).width() - this.$node.width();
-
-
-//   var nh = Math.floor(Math.random() * (600 - 300 + 1) + 300);
-
-//   var nw = Math.floor(Math.random() * w);
-
-
-//   return [nh, nw];
-// };
-
-// MakeHipHopDancer.prototype._calcSpeed = function(prev, next) {
-
-//   var x = Math.abs(prev[1] - next[1]);
-//   var y = Math.abs(prev[0] - next[0]);
-//   var greatest = x > y ? x : y;
-//   var speedModifier = 0.1;
-//   var speed = Math.ceil(greatest / speedModifier);
-//   return speed;
-// };
 
