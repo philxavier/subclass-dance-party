@@ -7,20 +7,23 @@ body{
   font-size: 18px;
   overflow: hidden;
 }
-body, a:link, a:visited, a:active{
-  color: lightblue;
-}
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+.title {
+  background-color: rgb(236, 102, 12);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 100px;
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: transparent;
 }
-.title{
-  background-color: #777;
-}
+
 .dancer{
   border:10px solid red;
   border-radius:10px;
@@ -57,39 +60,46 @@ body {
 
 .blink_screen_green {
   background-color:green;
-  position:absolute;
-  top:34px;
-  left:0;
-  bottom:0;
-  right:0;
-  height:95%;
-  width:100%;
+  height: 100%; /** IE 6 */
+  min-height: 100%;
   opacity: 0.3;
+  z-index: 0;
 }
 
 .blink_screen_red {
   background-color:red;
   position:absolute;
-  top:34px;
+  top:0;
   left:0;
   bottom:0;
   right:0;
-  height:95%;
+  height:100%;
   width:100%;
   opacity: 0.3;
+  z-index: 1;
 }
 
 .blink_screen_blue {
   background-color:blue;
   position:absolute;
-  top:34px;
+  top:0;
   left:0;
   bottom:0;
   right:0;
-  height:95%;
+  height:100%;
   width:100%;
   opacity: 0.3;
+  z-index: 1;
 }
-
-
-
+.addDancerButton, .lineUpButton, .interactButton, .danceButton, body, a:link, a:visited, a:active {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  z-index: 4;
+}

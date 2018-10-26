@@ -30,6 +30,10 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
 
+    $(".hiphop-dancer").on('click', function() {
+      $(this).addClass('rotated');
+    });
+
     window.dancers.push(dancer);
 
     if (hasDancer === false) {
@@ -83,5 +87,6 @@ $(document).ready(function() {
     }
   };
 
-});
 
+
+});
