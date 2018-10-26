@@ -57,38 +57,76 @@ body {
   background-size: cover;
 }
 
-
 .blink_screen_green {
+<<<<<<< HEAD
   background-color:green;
   height: 100%; /** IE 6 */
   min-height: 100%;
   opacity: 0.3;
+=======
+  background-color: rgba(0, 128, 0, 0.3);
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100%;
+  width:100%;
+  z-index: 0;
+}
+
+.blink_screen {
+  background-color: transparent;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100%;
+  width:100%;
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
   z-index: 0;
 }
 
 .blink_screen_red {
+<<<<<<< HEAD
   background-color:red;
   position:absolute;
+=======
+  background-color:rgba(255, 0, 0, 0.3);
+  position: absolute;
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
   top:0;
   left:0;
   bottom:0;
   right:0;
   height:100%;
   width:100%;
+<<<<<<< HEAD
   opacity: 0.3;
+=======
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
   z-index: 1;
 }
 
 .blink_screen_blue {
+<<<<<<< HEAD
   background-color:blue;
   position:absolute;
+=======
+  background: rgba(0,0,255, 0.3);
+  position: absolute;
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
   top:0;
   left:0;
   bottom:0;
   right:0;
   height:100%;
   width:100%;
+<<<<<<< HEAD
   opacity: 0.3;
+=======
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
   z-index: 1;
 }
 .addDancerButton, .lineUpButton, .interactButton, .danceButton, body, a:link, a:visited, a:active {
@@ -101,5 +139,13 @@ body {
   display: inline-block;
   font-size: 16px;
   border-radius: 3px;
+<<<<<<< HEAD
   z-index: 4;
 }
+=======
+  opacity: 100;
+  z-index: 4;
+}
+
+
+>>>>>>> afc4e8d8698e6552dc35672416f781e5c4d1bd0d
